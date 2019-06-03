@@ -1,0 +1,282 @@
+@font-face {
+  font-family: Moderat-Light;
+  src: url(./fonts/Moderat-Light.otf);
+}
+@font-face {
+  font-family: Moderat-Regular;
+  src: url(./fonts/Moderat-Regular.woff);
+}
+@font-face {
+  font-family: Moderat-Light-Italic;
+  src: url(./fonts/Moderat-Light-Italic.otf);
+}
+
+body {
+  font-family: 'Moderat-Regular';
+  background-color: #fff;
+  margin: 0;
+  position: relative;
+}
+h3, h1 {
+  margin: 0;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----- HOME ----- */
+.rounded-button {
+  height: 40px;
+  padding: 10px 20px;
+  border: 1px black solid;
+  border-radius: 30px;
+}
+
+/* ----- HEADER ------- */
+.header-container {
+  padding: 20px
+}
+
+.header-buttons-container {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 20px;
+  height: 100%;
+}
+.header-who {
+  margin-left: 20px;
+}
+.header-why {
+  margin-right: 20px;
+}
+
+.header-nav {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-nav a {
+  padding: 0 20px;
+}
+.header-line {
+  border-bottom: 1px #ADADAD solid;
+  padding-top: 10px;
+  margin: 0 20px;
+}
+
+/* ----- POSTER ----- */
+
+.poster-controls-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 40px;
+}
+
+.poster-color-wheels div, .poster-stickers img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 20px;
+  border: 0.5px rgb(210, 185, 144)solid;
+  cursor: pointer;
+}
+.poster-color-wheels div {
+  margin-right: 10px;
+}
+.poster-stickers img {
+  margin-left: 10px;
+}
+.poster-controls-stickers {
+  text-align: right;
+}
+.poster-logo-container img {
+  position: absolute;
+  left: 46%;
+}
+
+.poster-path {
+  top: 16%;
+}
+
+.poster-logo {
+  top: 60%;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+.poster-logo:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.poster-drag {
+  position: absolute;
+  left: 50%;
+  top: 11%;
+  transform: rotate(34deg);
+}
+
+.poster-wrapper {
+  display: table;
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.poster-container {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 20px;
+}
+
+.poster-canvas-container {
+  position: relative;
+  max-width: 80vh;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+#poster-canvas-rainbow {
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+#poster-canvas-text, #poster-canvas-stickers, #poster-canvas-logo {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#poster-canvas-text, #poster-canvas-logo {
+  pointer-events: none;
+}
+#poster-canvas-text {
+  z-index: 1;
+}
+
+#poster-canvas-stickers {
+  z-index: 2;
+}
+
+#poster-canvas-logo {
+  z-index: 3;
+}
+
+.poster-controls-share-container {
+  padding-top: 60px;
+  text-align: center;
+}
+.poster-controls-share-container button {
+  margin: 0 10px 40px;
+}
+/* ------ MODAL ------ */
+
+.modal-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.3);
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.modal-body {
+  padding: 40px 40px 30px;
+  text-align: center;
+  width: 34vw;
+}
+.modal-body button {
+  margin: 10px 5px 0;
+}
+.close-modal-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 25px;
+  right: 25px;
+}
+.close-modal-btn img {
+  width: 25px;
+}
+.close-modal-btn:hover {
+  cursor: pointer;
+}
+.modal-share-image {
+  max-width: 200px;
+}
+
+/* ---- CITIES ---- */
+.cities-container {
+  font-size: 1.2em;
+  background-color: #FBFBFB;
+  padding-bottom: 100px;
+}
+.cities-sign-up {
+  padding: 40px;
+  line-height: 1.2;
+  text-align: center;
+}
+.cities-sign-up-button {
+  margin-top: 20px;
+  height: 100%;
+  padding: 15px 60px;
+}
+.cities-travel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
+  height: 100%;
+  margin: 0 auto;
+}
+.cities-traveling {
+  padding-left: 20px;
+}
+.cities-search {
+  background-color: #000;
+  color: #fff;
+  border-radius: 50px;
+  padding: 6px 40px;
+}
+.cities-coming-soon-title {
+  padding: 40px 11vw 25px;
+}
+.cities-coming-soon-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.cities-grid-element {
+  height: 300px;
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 40px;
+  border: 1px #ADADAD solid;
+}
