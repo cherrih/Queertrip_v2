@@ -1,6 +1,8 @@
 import React from 'react';
+import Guides from './Guides.jsx';
+import Cities from './Cities.jsx';
 
-const Home = (props) => {
+const Home = ({ cities }) => {
   return (
     <>
       <section id="logo"></section>
@@ -8,6 +10,10 @@ const Home = (props) => {
       <div className="home-search">
         <div>I'm traveling to...</div>
         <button className="home-button">GO</button>
+      </div>
+      <div className="home-mid-section-container">
+        <div className="guides-container"><Guides /></div>
+        <div className="cities-container"><Cities cities={cities}/></div>
       </div>
     </>
   );

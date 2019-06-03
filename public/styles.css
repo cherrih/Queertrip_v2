@@ -17,6 +17,7 @@
   --main-bg-light: rgb(242, 236, 230);
   --main-text-brown: rgb(210, 192, 173);
   --main-text-gray: rgb(109, 107, 106);
+  --main-text-darkgrey: rgb(96, 95, 94);
 }
 
 body {
@@ -37,6 +38,10 @@ button {
   cursor: pointer;
 }
 
+h2 {
+  font-family: 'Moderat-Light';
+}
+
 /* ------------- HOME ----------------- */
 .home-title {
   font-family: 'Moderat-Light';
@@ -52,7 +57,7 @@ button {
   justify-content: space-between;
   border: 2px solid var(--main-bg-light);
   max-width: 500px;
-  margin: 40px auto;
+  margin: 40px auto 60px;
   padding: 5px 5px 5px 30px;
   border-radius: 40px;
   font-size: 1.5em;
@@ -65,4 +70,55 @@ button {
   padding: 10px 7px;
   border-radius: 100%;
   font-size: 0.8em;
+}
+.home-mid-section-container {
+  display: flex;
+}
+
+/* ----------------- GUIDES ------------------ */
+.guides-container {
+  width: 30vw;
+  background-color: var(--main-bg-lighter);
+}
+.guides-container h2 {
+  margin: 40px 40px 20px;
+}
+
+/* ----------------- CITIES ------------------ */
+.cities-container {
+  width: 70vw;
+  background-color: var(--main-bg-light);
+}
+.cities-container h2 {
+  margin: 40px 40px 20px;
+}
+.city-list-cities {
+  font-size: 2.4em;
+}
+.city-list-container {
+  color: var(--main-text-brown);
+  /* border-bottom: 1.5px solid var(--main-bg-lighter); */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+.city-categories-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.city-categories {
+  width: 100px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.city-category-value {
+  font-size: 30px;
+}
+.city-category-name {
+  color: var(--main-text-darkgrey);
+}
+.city-list-container:hover {
+  cursor: pointer;
+  color: var(--main-text-darkgrey);
 }
