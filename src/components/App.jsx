@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './Home/Home.jsx';
 import cities from '../data.js';
 
@@ -14,7 +15,12 @@ class App extends Component {
     const { cities } = this.state;
     return (
       <>
-        <Home cities={cities} />
+        <Router>
+          <Route 
+            exact path="/" 
+            render={(props) => <Home {...props} cities={cities} />}
+          />
+        </Router>
       </>
     );
   }
