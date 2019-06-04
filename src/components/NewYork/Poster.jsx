@@ -309,9 +309,9 @@ class Poster extends Component {
           <div className="poster-controls-stickers">
             <div>Stickers</div>
             <div className="poster-stickers">
-              <img src="/public/images/frank.jpeg" onClick={this.selectImage} />
+              {/* <img src="/public/images/frank.jpeg" onClick={this.selectImage} />
               <img src="/public/images/frida.png" onClick={this.selectImage} />
-              <img src="/public/images/pride.png" onClick={this.selectImage} />
+              <img src="/public/images/pride.png" onClick={this.selectImage} /> */}
             </div>
           </div>
         </div>

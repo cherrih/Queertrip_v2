@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './Home/Home.jsx';
-import NewYorkGuide from './NewYorkGuide.jsx';
+import NewYorkGuide from './NewYork/NewYorkGuide.jsx';
 import cities from '../data.js';
 
 class App extends Component {
@@ -18,11 +18,11 @@ class App extends Component {
       <>
         <Router>
           <Route 
-            exact path="/" 
+            exact path="/nyc-guide" 
             render={(props) => <Home {...props} cities={cities} />}
           />
           <Route 
-            exact path="/nyc-guide/" 
+            exact path="/" 
             component={NewYorkGuide}
           />
         </Router>
