@@ -284,6 +284,16 @@ class Poster extends Component {
     const url = 'https://queertriptheworld.s3.amazonaws.com/';
     return (
       <>
+        <div className="poster-wrapper">
+          <div className="poster-container">
+            <div className="poster-canvas-container">
+              <canvas id="poster-canvas-rainbow" width="1080" height="1080" ref={this.rainbowRef} onDragOver={this.onCanvasRainbowDragOver} onDragEnter={this.onCanvasMouseEnter} />
+              <canvas id="poster-canvas-text" width="1080" height="1080" ref={this.textRef} />
+              <canvas id="poster-canvas-stickers" width="1080" height="1080" ref={this.stickersRef} onClick={this.placeImage} style={{ pointerEvents: imageCanvasPointer }} />
+              <canvas id="poster-canvas-logo" width="1080" height="1080" ref={this.logoRef} />
+            </div>
+          </div>
+        </div>
         <div className="poster-controls-container">
           <div className="poster-controls-colors">
             <div>Colors</div>
@@ -312,16 +322,6 @@ class Poster extends Component {
               {/* <img src="/public/images/frank.jpeg" onClick={this.selectImage} />
               <img src="/public/images/frida.png" onClick={this.selectImage} />
               <img src="/public/images/pride.png" onClick={this.selectImage} /> */}
-            </div>
-          </div>
-        </div>
-        <div className="poster-wrapper">
-          <div className="poster-container">
-            <div className="poster-canvas-container">
-              <canvas id="poster-canvas-rainbow" width="1080" height="1080" ref={this.rainbowRef} onDragOver={this.onCanvasRainbowDragOver} onDragEnter={this.onCanvasMouseEnter} />
-              <canvas id="poster-canvas-text" width="1080" height="1080" ref={this.textRef} />
-              <canvas id="poster-canvas-stickers" width="1080" height="1080" ref={this.stickersRef} onClick={this.placeImage} style={{ pointerEvents: imageCanvasPointer }} />
-              <canvas id="poster-canvas-logo" width="1080" height="1080" ref={this.logoRef} />
             </div>
           </div>
         </div>

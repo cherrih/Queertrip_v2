@@ -25,7 +25,7 @@ body {
   background-color: #fff;
   margin: 0;
 }
-h1 {
+h1, h4 {
   margin: 0;
 }
 a {
@@ -299,6 +299,29 @@ h2 {
 /* --------- CITY GUIDE ----------- */
 .city-guide-container {
   display: flex;
-  justify-content: space-evenly;
   width: 100vw;
+}
+.city-guide-city {
+  width: 30vw;
+}
+.city-guide-map {
+  width: 70vw;
+}
+.city-description {
+  background-image: url('./images/ny.jpeg');
+  background-size: cover;
+  background-position: top;
+  height: 30vw;
+}
+.city-description h4 {
+  padding: 20px;
+}
+.city-description h1 {
+  text-align: center;
+  padding-top: 7vw;
+}
+
+/* ----------- CONTACT FORM ----------- */
+.contact-form input {
+  display: block;
 }

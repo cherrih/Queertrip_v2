@@ -40,23 +40,11 @@ class ContactForm extends Component {
   render() {
     const { name, pronouns, email, phone } = this.state;
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} name="name" onChange={this.onInputChange} />
-        </label>
-        <label>
-          Pronouns:
-          <input type="text" value={pronouns} name="pronouns" onChange={this.onInputChange} />
-        </label>
-        <label>
-          Email:
-          <input type="text" value={email} name="email" onChange={this.onInputChange} />
-        </label>
-        <label>
-          Phone:
-          <input type="text" value={phone} name="phone" onChange={this.onInputChange} />
-        </label>
+      <form className="contact-form" onSubmit={this.onFormSubmit}>
+        <input type="text" placeholder="name" value={name} name="name" onChange={this.onInputChange} />
+        <input type="text" placeholder="pronouns" value={pronouns} name="pronouns" onChange={this.onInputChange} />
+        <input type="email" placeholder="email" value={email} name="email" onChange={this.onInputChange} />
+        <input type="text" placeholder="phone" value={phone} name="phone" onChange={this.onInputChange} />
         <input type="submit" value="Submit" />
       </form>
     )
