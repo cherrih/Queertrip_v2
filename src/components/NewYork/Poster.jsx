@@ -170,7 +170,7 @@ class Poster extends Component {
 
     logoCtx.font = smallTextFont;
     logoCtx.fillText('Queertrip.world', width / 1.2, height / 1.03);
-    logoCtx.fillText('Helping queerdos travel queerder', width / 1.56, height / 1.006);
+    logoCtx.fillText('Helping queerdos travel queerer', width / 1.56, height / 1.006);
   }
 
   placeText() {
