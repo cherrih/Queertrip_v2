@@ -71,7 +71,8 @@ class LogoLarge extends Component {
 
   render() {
     return(
-      <div
+      <div 
+        className="logo-canvas"
         style={{ width: '400px', height: '400px' }}
         ref={(mount) => { this.mount = mount }}
       />

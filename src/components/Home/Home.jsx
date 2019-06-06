@@ -6,7 +6,7 @@ import Cities from './Cities.jsx';
 
 const Home = ({ cities }) => {
   return (
-    <>
+    <div className="home-container">
       <LogoLarge />
       <h1 className="home-title">Helping queerdos <br/> travel queerer.</h1>
       <ContactForm />
@@ -14,7 +14,7 @@ const Home = ({ cities }) => {
         <div className="guides-container"><Guides /></div>
         <div className="cities-container"><Cities cities={cities}/></div>
       </div>
-    </>
+    </div>
   );
 };
 
