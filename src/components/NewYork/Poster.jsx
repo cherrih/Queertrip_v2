@@ -19,8 +19,6 @@ class Poster extends Component {
     this.stickersRef = React.createRef();
     this.logoRef = React.createRef();
 
-    this.placeLogo = this.placeLogo.bind(this);
-    this.placeText = this.placeText.bind(this);
     this.onColorClick = this.onColorClick.bind(this);
     this.resetCanvas = this.resetCanvas.bind(this);
     this.toggleDragVisibility = this.toggleDragVisibility.bind(this);
@@ -31,12 +29,11 @@ class Poster extends Component {
     this.updateCursorPosition = this.updateCursorPosition.bind(this);
     this.selectImage = this.selectImage.bind(this);
     this.placeImage = this.placeImage.bind(this);
+    this.placeTextImage = this.placeTextImage.bind(this);
   }
 
   componentDidMount() {
-    this.placeLogo();
-    this.placeText();
-    this.placeLocationText();
+    this.placeTextImage();
   }
 
   onColorClick(e) {
@@ -107,6 +104,16 @@ class Poster extends Component {
     });
   }
 
+  placeTextImage() {
+    const canvas = this.textRef.current;
+    const ctx = canvas.getContext('2d');
+    const image = new Image();
+    image.src="./images/happy_pride_nyc.png";
+    image.onload = () => {
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    }
+  }
+
   placeImage(e) {
     const { currImage, isImagePlacer } = this.state;
     if (isImagePlacer) {
@@ -148,107 +155,6 @@ class Poster extends Component {
     const rainbowCanvas = this.rainbowRef.current;
     const rainbowCtx = rainbowCanvas.getContext('2d');
     rainbowCtx.clearRect(0, 0, rainbowCanvas.width, rainbowCanvas.height);
-  }
-
-  placeLogo() {
-    const canvas = this.logoRef.current;
-    const { width, height } = canvas;
-    const logoCtx = canvas.getContext('2d');
-
-    const textColor = 'rgb(210, 185, 144)';
-    const largeTextFont = '10em Moderat-Light';
-    const smallTextFont = '1.6em Moderat-Light';
-    const italicTextFont = '1.6em Moderat-Light-Italic';
-
-    logoCtx.fillStyle = textColor;
-    logoCtx.font = italicTextFont;
-    logoCtx.fillText('Queer city guides', width / 1.232, height / 1.55);
-
-    logoCtx.font = largeTextFont;
-    logoCtx.fillText('NY', width / 1.248, height / 1.3);
-    logoCtx.fillText('C', width / 1.1612, height / 1.12);
-
-    logoCtx.font = smallTextFont;
-    logoCtx.fillText('Queertrip.world', width / 1.2, height / 1.03);
-    logoCtx.fillText('Helping queerdos travel queerer', width / 1.56, height / 1.006);
-  }
-
-  placeText() {
-    const canvas = this.textRef.current;
-    const { width, height } = canvas;
-    const textCtx = canvas.getContext('2d');
-
-    const textColor = 'rgb(210, 185, 144)';
-    const textFont = '29em Moderat-Light';
-
-    textCtx.font = textFont;
-    textCtx.fillStyle = textColor;
-    textCtx.fillText('H', width / -25.2, height / 2.7);
-
-    this.placeRotatedText('a', 90, 6.8, -3.65);
-    this.placeRotatedText('p', 32, 1.8, -6.5);
-    this.placeRotatedText('p', 32, 1.53, 10);
-    this.placeRotatedText('y', -20, 1.65, 1.3);
-    this.placeRotatedText('p', 2, -170, 1.58);
-    this.placeRotatedText('r', 38, 1.8, 2.6);
-    this.placeRotatedText('i', 2, 7.5, 1.02);
-    this.placeRotatedText('d', -40, -2.8, 0.95);
-    this.placeRotatedText('e', -40, -10, 0.9);
-  }
-
-  placeLocationText() {
-    const canvas = this.textRef.current;
-    const { width, height } = canvas;
-    const textCtx = canvas.getContext('2d');
-
-    const textColor = 'rgb(210, 185, 144)';
-    const textFont = '1.6em Moderat-Light-Italic';
-
-    textCtx.font = textFont;
-    textCtx.fillStyle = textColor;
-    textCtx.fillText('Stonewall Inn', width / 25, height / 5.25);
-
-    this.placeRotatedText('Apollo Theater', -58, 12, 1.74);
-    this.placeRotatedText('Mattachine Society', -58, -5.8, 1.485);
-    this.placeRotatedText('Caffe Cino', 50, 1.33, -2.325);
-    this.placeRotatedText('"House of D"', -52, -3.3, 1.73);
-    this.placeRotatedText('The Duchess', 92, 1.3, -4.7);
-    this.placeRotatedText('8th Street', 50, 1.325, 8.4);
-
-    this.placeArchedText('Studio 54', 3.1, 4.8, 62, 0.59, -7);
-    this.placeArchedText('Chelsea Hotel', 8.5, 2.05, 90, 0.59, 8);
-    this.placeArchedText('Gumby Book Studio', 1.55, 1.38, 100, 0.8, -8);
-  }
-
-  placeRotatedText(str, deg, w, h) {
-    const canvas = this.textRef.current;
-    const { width, height } = canvas;
-    const textCtx = canvas.getContext('2d');
-
-    textCtx.save();
-    textCtx.rotate(deg * Math.PI / 180);
-    textCtx.fillText(str, width / w, height / h);
-    textCtx.restore();
-  }
-
-  placeArchedText(str, w, h, radius, angle, tilt) {
-    const canvas = this.textRef.current;
-    const { width, height } = canvas;
-    const textCtx = canvas.getContext('2d');
-    textCtx.textAlign = 'center';
-    textCtx.save();
-    textCtx.translate(width / w, height / h);
-    textCtx.rotate(-1 * (Math.PI * angle) / 2);
-    textCtx.rotate(-1 * (((Math.PI * angle) - tilt) / (str.length)) / 2);
-    for (let i = 0; i < str.length; i += 1) {
-      textCtx.rotate((Math.PI * angle) / str.length);
-      textCtx.save();
-      textCtx.translate(0, -1 * radius);
-      const char = str[i];
-      textCtx.fillText(char, 0, 0);
-      textCtx.restore();
-    }
-    textCtx.restore();
   }
 
   saveImage() {

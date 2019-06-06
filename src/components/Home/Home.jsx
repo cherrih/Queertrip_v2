@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from '../Global/ContactForm.jsx';
 import Guides from './Guides.jsx';
 import Cities from './Cities.jsx';
 
@@ -7,10 +8,7 @@ const Home = ({ cities }) => {
     <>
       <section id="logo"></section>
       <h1 className="home-title">Helping queerdos <br/> travel queerer.</h1>
-      <div className="home-search">
-        <div>I'm traveling to...</div>
-        <button className="home-button">GO</button>
-      </div>
+      <ContactForm />
       <div className="home-mid-section-container">
         <div className="guides-container"><Guides /></div>
         <div className="cities-container"><Cities cities={cities}/></div>

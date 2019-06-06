@@ -7,8 +7,8 @@
   src: url(./fonts/Moderat-Regular.woff);
 }
 @font-face {
-  font-family: Moderat-Light-Italic;
-  src: url(./fonts/Moderat-Light-Italic.otf);
+  font-family: Apercu-Light-Italic;
+  src: url(./fonts/Apercu-Light-Italic.otf);
 }
 
 :root {
@@ -44,6 +44,12 @@ button {
 
 h2 {
   font-family: 'Moderat-Light';
+}
+
+input[type=email], input[type=email]:focus, input[type=submit], input[type=submit]:focus {
+  border: none;
+  background-color: none;
+  outline: 0;
 }
 
 /* ------------- HOME ----------------- */
@@ -134,14 +140,14 @@ h2 {
   color: var(--main-text-darkgrey);
 }
 .city-list-container:hover {
-  cursor: pointer;
+  cursor: default;
   color: var(--main-text-darkgrey);
 }
 
 /* ----- POSTER ----- */
 
 .poster-controls-container {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -199,12 +205,10 @@ h2 {
 .poster-wrapper {
   display: table;
   width: 100%;
-  height: 100%;
 }
 
 .poster-container {
   display: table-cell;
-  vertical-align: middle;
 }
 
 .poster-canvas-container {
@@ -243,7 +247,6 @@ h2 {
 }
 
 .poster-controls-share-container {
-  padding-top: 60px;
   text-align: center;
 }
 .poster-controls-share-container button {
@@ -300,10 +303,10 @@ h2 {
   width: 100vw;
 }
 .city-guide-city {
-  width: 30vw;
+  width: calc(100vw - 80vh);
 }
 .city-guide-map {
-  width: 70vw;
+  width: 80vh;
 }
 .city-description {
   background-image: url('./images/ny.jpeg');
@@ -323,3 +326,50 @@ h2 {
 .contact-form input {
   display: block;
 }
+.contact-form {
+  font-family: Moderat-Light;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--main-bg-light);
+  max-width: 500px;
+  margin: 40px auto 60px;
+  padding: 5px 5px 5px 30px;
+  border-radius: 40px;
+  color: var(--main-text-gray);
+}
+.contact-submit {
+  background-color: var(--main-red);
+  color: #fff;
+  padding: 10px 8px;
+  border-radius: 100%;
+  font-size: 0.8em;
+}
+.contact-submit:hover {
+  cursor: pointer;
+}
+.contact-input {
+  font-size: 0.8em;
+  width: 100%;
+}
+/* .home-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--main-bg-light);
+  max-width: 500px;
+  margin: 40px auto 60px;
+  padding: 5px 5px 5px 30px;
+  border-radius: 40px;
+  font-size: 1.5em;
+  color: var(--main-text-gray);
+}
+
+.home-button {
+  background-color: var(--main-red);
+  color: #fff;
+  padding: 10px 7px;
+  border-radius: 100%;
+  font-size: 0.8em;
+} */
