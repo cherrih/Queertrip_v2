@@ -30,18 +30,48 @@ class LogoLarge extends Component {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.mount.appendChild(this.renderer.domElement);
 
+    this.createLogo();
+    this.createAirplane();
+    
+    this.start();
+  }
+  
+  createLogo() {
     const loader = new THREE.TextureLoader();
-
-    const texture = loader.load("./images/queertrip_skin3.png");
+    const texture = loader.load("./images/queertrip_skin1.png");
     const geometry = new THREE.SphereGeometry(800, 128, 128);
     const material = new THREE.MeshBasicMaterial({
-      map: texture
+      map: texture,
     })
     this.logo = new THREE.Mesh(geometry, material);
     this.logo.rotation.z = -25 * Math.PI / 180;
     
     this.scene.add(this.logo);
-    this.start();
+  }
+
+  createAirplane() {
+    const loader = new THREE.TextureLoader();
+    const texture = loader.load("./images/airplane.png");
+    const geometry = new THREE.PlaneGeometry(1000, 861);
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      side: THREE.DoubleSide,
+      transparent: true
+    });
+
+    this.airplaneField = new THREE.Object3D();
+    this.scene.add(this.airplaneField);
+    
+    this.pivot = new THREE.Object3D();
+    this.pivot.rotation.z = 0;
+    
+    this.airplaneField.add(this.pivot);
+    this.airplane = new THREE.Mesh(geometry, material);
+    this.airplane.position.y = -700;
+    this.airplane.position.x = -700;
+
+    this.airplane.geometry.rotateY(0.6);
+    this.pivot.add(this.airplane);    
   }
 
   componentWillUnmount(){
@@ -61,6 +91,7 @@ class LogoLarge extends Component {
   animate() {
     this.camera.lookAt(this.scene.position);
     this.logo.rotateY(0.009);
+    this.airplaneField.rotation.z += 0.01;
     this.renderScene()
     this.frameId = window.requestAnimationFrame(this.animate)
   }
