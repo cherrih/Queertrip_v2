@@ -56,17 +56,24 @@ input[type=email], input[type=email]:focus, input[type=submit], input[type=submi
 .home-container {
   position: relative;
   width: 100%;
+  /* z-index: -2; */
 }
 .logo-canvas {
   display: block;
   position: absolute;
-  z-index: -99;
+  /* z-index: 1; */
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
 }
+.home-background-container {
+  background-image: url(./images/queerday.png);
+  background-size: cover;
+  background-position: center;
+}
 .home-title {
+  /* z-index: 2; */
   padding-top: 260px;
   font-family: 'Moderat-Light';
   color: var(--main-red);

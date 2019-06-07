@@ -23,9 +23,10 @@ class LogoLarge extends Component {
 
     // Add Renderer
     this.renderer = new THREE.WebGLRenderer({
-      antialias: true
+      antialias: true,
+      alpha: true,
     });
-    this.renderer.setClearColor('#fff', 1);
+    this.renderer.setClearColor(0x000000, 0);
     this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.mount.appendChild(this.renderer.domElement);
