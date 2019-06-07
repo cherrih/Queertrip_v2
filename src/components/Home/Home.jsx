@@ -7,10 +7,9 @@ import Cities from './Cities.jsx';
 const Home = ({ cities }) => {
   return (
     <div className="home-container">
-      <div className="home-background-container">
-        <LogoLarge />
-        <h1 className="home-title">Helping queerdos <br/> travel queerer.</h1>
-      </div>
+      <div className="home-background-container" />
+      <LogoLarge />
+      <h1 className="home-title">Helping queerdos <br/> travel queerer.</h1>
       <ContactForm />
       <div className="home-mid-section-container">
         <div className="guides-container"><Guides /></div>
